@@ -36,6 +36,7 @@ class CharactersViewModel(
                 _uiState.value = CharactersUiState.Success(list)
             }.onFailure { exception ->
                 println(exception.message)
+
                 _uiState.value = CharactersUiState.Loading
                 val cache = repository.getCachedCharacters()
                 if (cache.isEmpty()) {

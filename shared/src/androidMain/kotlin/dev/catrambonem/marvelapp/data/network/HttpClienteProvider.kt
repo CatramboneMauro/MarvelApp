@@ -18,6 +18,7 @@ actual fun getHttpClient(): HttpClient {
             })
         }
 
+
         engine{
             addInterceptor(StatusLoggingInterceptor())
         }
@@ -29,7 +30,6 @@ class StatusLoggingInterceptor : Interceptor {
         val request = chain.request()
         val response = chain.proceed(request)
         println("HTTP ${request.method} ${request.url} -> Status: ${response.code}")
-        println("Response: ${response.body?.string()}")
         return response
     }
 }

@@ -4,7 +4,7 @@ import dev.catrambonem.marvelapp.cache.MarvelDatabase
 import dev.catrambonem.marvelapp.domain.model.Character
 
 class CharacterLocalDataSource(database: MarvelDatabase) {
-    private val queries = database.marvelDatabaseQueries  // Objeto de consultas generado
+    private val queries = database.marvelDatabaseQueries
 
     fun insertCharacter(character: Character) {
         queries.insertCharacter(

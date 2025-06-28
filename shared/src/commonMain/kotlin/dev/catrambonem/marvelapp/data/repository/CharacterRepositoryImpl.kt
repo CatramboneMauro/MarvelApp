@@ -20,7 +20,6 @@ class CharacterRepositoryImpl(
             val privateKey = getMarvelPrivateKey()
             val hash = ("$timestamp$privateKey$publicKey").md5()
 
-            println("Datos: $timestamp, $hash, $publicKey")
             val apiResponse =
                 api.getAllCharacters(timestamp = timestamp, md5 = hash, publicKey = publicKey)
             val charactersList = apiResponse.characters.list.map { characterResult ->
